@@ -41,6 +41,8 @@ exports.getBooks = async function (offset, limit, sortby, filter) {
 exports.addBook = async function (data) {
   const SQL = 'insert into books (Title, Autor, Date, Description, Image) values (?, ?, ?, ?, ?)';
   await pool.execute(SQL, [data.title, data.autor, data.date, data.description, data.image]);
+  const [rows, fields] = await pool.execute('SELECT LAST_INSERT_ID() as ID');
+  return {id: rows[0].ID};
 }
 
 exports.updateBook = async function (id, data) {

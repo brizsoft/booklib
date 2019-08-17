@@ -53,7 +53,14 @@ Content: {
 
 <h3>Success Response</h3>
 
+<pre>
 Code: 200
+Content: {
+  "id": 1001
+}
+</pre>
+
+id = Integer, id of appended book
 
 <h3>Error Response</h3>
 
@@ -79,7 +86,9 @@ Content: {
 
 <h3>Success Response</h3>
 
+<pre>
 Code: 200
+</pre>
 
 <h3>Error Response</h3>
 
