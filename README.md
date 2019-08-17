@@ -16,6 +16,7 @@ filter = string
 
 <h3>Success Response</h3>
 
+<pre>
 Code: 200
 Content: [{
 "ID": 395,
@@ -26,11 +27,14 @@ Content: [{
 "Image": "http://dummyimage.com/557x671.jpg/5fa2dd/ffffff"
 }, {...}, ...
 ]
+</pre>
 
 <h3>Error Response</h3>
 
+<pre>
 Code: 500
 Content: Error message
+</pre>
 
 <h2>Add Book</h2>
 
@@ -41,7 +45,7 @@ POST /books
 Content: {
 "title":"Test Title",
 "autor":"test autor",
-"date":"2012-01-01",
+"date":"2012-01-31",
 "description":"test description",
 "image":"http://test.image.com/test.jpg"
 }
@@ -53,8 +57,10 @@ Code: 200
 
 <h3>Error Response</h3>
 
+<pre>
 Code: 500
 Content: Error message
+</pre>
 
 <h2>Update Book</h2>
 
@@ -65,7 +71,7 @@ PUT /books/:book_id
 Content: {
 "title":"Test Title",
 "autor":"test autor",
-"date":"2012-01-01",
+"date":"2012-01-31",
 "description":"test description",
 "image":"http://test.image.com/test.jpg"
 }
@@ -77,5 +83,7 @@ Code: 200
 
 <h3>Error Response</h3>
 
+<pre>
 Code: 500
 Content: Error message
+</pre>
