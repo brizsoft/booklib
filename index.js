@@ -17,7 +17,7 @@ const bodyParser = require('koa-bodyparser');
 app.use(bodyParser());
 
 // need Redis installed and runned
-// just comment to work with cache
+// just comment two below strings to work without cache
 const cache = require('./cache.js');
 app.use(cache);
 
