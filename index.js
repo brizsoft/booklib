@@ -16,8 +16,10 @@ app.use(async (ctx, next) => {
 const bodyParser = require('koa-bodyparser');
 app.use(bodyParser());
 
-//const cache = require('./cache.js');
-//app.use(cache);
+// need Redis installed and runned
+// just comment to work with cache
+const cache = require('./cache.js');
+app.use(cache);
 
 const router = require('./router.js');
 app.use(router.routes());
