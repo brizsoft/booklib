@@ -20,7 +20,7 @@ exports.getBooks = async function (offset, limit, sortby, filter) {
   // fast solution but it requires full-text index
   if (filter) { SQL = SQL + ` where MATCH (Title, Autor, Description) AGAINST (${escape(filter)})` }
 
-  if (sortby) { SQL = SQL + ' order by ' + escape(sortby) }
+  if (sortby) { SQL = SQL + ' order by ' + sortby }
 
   if (limit) {
     if (offset) {
