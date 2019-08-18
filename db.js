@@ -32,7 +32,7 @@ exports.getBooks = async function (offset, limit, sortby, filter) {
     if (offset) throw new Error('The offset cannot be used without limit.');
   }
 
-  console.log(SQL);
+  //console.log(SQL);
 
   const [rows, fields] = await pool.query(SQL);
   return rows;

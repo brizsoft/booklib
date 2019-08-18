@@ -1,4 +1,4 @@
-<h1>API Documentaion</h1>
+<h1>API Documentation</h1>
 
 <h2>Book list</h2>
 

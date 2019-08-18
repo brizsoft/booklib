@@ -1,12 +1,7 @@
-const Koa = require('koa');
-const app = new Koa();
-
-const bodyParser = require('koa-bodyparser');
-app.use(bodyParser());
-
 require('dotenv').config({ path: "config.env"});
 
-const router = require('./router.js');
+const Koa = require('koa');
+const app = new Koa();
 
 app.use(async (ctx, next) => {
   try {
@@ -18,6 +13,13 @@ app.use(async (ctx, next) => {
   }
 });
 
+const bodyParser = require('koa-bodyparser');
+app.use(bodyParser());
+
+//const cache = require('./cache.js');
+//app.use(cache);
+
+const router = require('./router.js');
 app.use(router.routes());
 
 app.on('error', err => {
