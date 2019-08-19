@@ -1,5 +1,4 @@
 const mysql = require('mysql2/promise');
-const escape = require('sqlstring').escape;
 
 const pool = mysql.createPool({
   host: process.env.DB_HOST,
@@ -18,9 +17,9 @@ exports.getBooks = async function (offset, limit, sortby, filter) {
   //if (filter) SQL = SQL + ` where Autor like '%${filter}%' or Title like '%${filter}%' or Description like '%${filter}%'`;
 
   // fast solution but it requires full-text index
-  if (filter) { SQL = SQL + ` where MATCH (Title, Autor, Description) AGAINST (${escape(filter)})` }
+  if (filter) { SQL = SQL + ` where MATCH (Title, Autor, Description) AGAINST (${mysql.escape(filter)})` }
 
-  if (sortby) { SQL = SQL + ' order by ' + sortby }
+  if (sortby) { SQL = SQL + ' order by ' + mysql.escapeId(sortby) }
 
   if (limit) {
     if (offset) {
