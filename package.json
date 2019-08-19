@@ -18,8 +18,7 @@
     "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
     "mysql2": "^1.6.5",
-    "redis": "^2.8.0",
-    "sqlstring": "^2.3.1"
+    "redis": "^2.8.0"
   },
   "devDependencies": {
     "eslint": "^6.1.0"
