@@ -15,6 +15,7 @@ async function cacheMiddleware(ctx, next) {
     let data = await getCache(ctx.request.url);
     if (data) {
       ctx.body = data;
+      ctx.type = 'application/json';
     } else {
       await next();
       setCache(ctx.request.url, ctx.body);
@@ -26,7 +27,8 @@ async function cacheMiddleware(ctx, next) {
 }
 
 async function getCache(key) {
-  return JSON.parse(await getRedisAsync(key));
+  //return JSON.parse(await getRedisAsync(key));
+  return await getRedisAsync(key);
 }
 
 async function setCache(key, val) {

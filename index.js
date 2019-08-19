@@ -16,7 +16,8 @@ app.use(async (ctx, next) => {
 const bodyParser = require('koa-bodyparser');
 app.use(bodyParser());
 
-// need Redis installed and runned
+// need Redis installed and runned,
+// should be configured with maxmemory ?mb and maxmemory-policy allkeys-lru
 // just comment two below strings to work without cache
 const cache = require('./cache.js');
 app.use(cache);
