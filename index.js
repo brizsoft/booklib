@@ -1,4 +1,4 @@
-require('dotenv').config({ path: "config.env"});
+require('dotenv').config({ path: 'config.env'});
 
 const Koa = require('koa');
 const app = new Koa();
