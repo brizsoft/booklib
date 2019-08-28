@@ -19,8 +19,8 @@ app.use(bodyParser());
 // need Redis installed and runned,
 // should be configured with maxmemory ?mb and maxmemory-policy allkeys-lru
 // just comment two below strings to work without cache
-const cache = require('./cache.js');
-app.use(cache);
+//const cache = require('./cache.js');
+//app.use(cache);
 
 const router = require('./router.js');
 app.use(router.routes());
